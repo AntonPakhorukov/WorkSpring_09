@@ -1,6 +1,8 @@
 package SpringDB;
 
+import org.apache.velocity.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Calendar;
@@ -28,7 +30,8 @@ public class TaskService {
         return taskRepository.findAll();
     }
     public Task getTaskById(Long id){
-        return taskRepository.findById(id).orElse(null);
+        return taskRepository.findById(id).
+                orElseThrow(()-> new ResourceNotFoundException("No task with id: " + id));
     }
     public List<Task> filterByStatus(Task.Status status){
         return taskRepository.findAll().stream()
