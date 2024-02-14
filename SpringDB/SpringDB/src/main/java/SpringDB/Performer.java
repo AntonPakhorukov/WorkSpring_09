@@ -6,9 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Entity
-@Table
+@Table(name = "performer")
 @Setter
 @Getter
 @AllArgsConstructor

@@ -1,5 +1,6 @@
 package SpringDB;
 
+import org.apache.velocity.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,6 +8,10 @@ import java.util.List;
 
 @Service
 public class PerformerService {
+    //Добавил репозиторий
+    @Autowired
+    private TaskRepository taskRepository;
+
     @Autowired
     private PerformerRepository performerRepository;
 
@@ -15,7 +20,7 @@ public class PerformerService {
     }
 
     public Performer findPerformerById(Long id) {
-        return performerRepository.findById(id).orElseThrow(() -> new RuntimeException("Performer not found"));
+        return performerRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Performer not found"));
     }
 
     public Performer save(Performer performer) {
