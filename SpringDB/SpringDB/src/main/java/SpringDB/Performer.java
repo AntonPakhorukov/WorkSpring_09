@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "performer")
 @Setter
@@ -18,4 +20,9 @@ public class Performer {
     private Long id;
     @Column(nullable = false)
     private String name;
+    // Variations
+    @OneToMany
+    @JoinColumn(name = "task_id")
+    private List<Task> tasks;
+
 }

@@ -35,6 +35,11 @@ public class TaskController {
     @Autowired
     private PerformerService performerService;
 
+    @GetMapping("/login")
+    public String loginEndpoint(){
+        return "You need enter login and password";
+    }
+
     @GetMapping("/tasks")
     public List<Task> getAllTask() {
         return taskService.getAllTask();

@@ -54,12 +54,16 @@ public class TaskService {
                 .sorted(Comparator.comparing(Task::getId))
                 .collect(Collectors.toList());
     }
+
     public Task assignPerformerToTask(Long id, Long performerId){
         Task existingTask = getTaskById(id); // Нашли задачу
         Performer performer = performerService.findPerformerById(performerId); // нашли исполнителя
         existingTask.getPerformers().add(performer); // у задачи добавили исполнителя в список исполнителей
+
+
         return taskRepository.save(existingTask);
     }
+
     public Task deassingPerformerToTask(Long id, Long performerId){
         Task existingTask = getTaskById(id);
         existingTask.getPerformers().removeIf(performer -> performer.getId().equals(performerId));
