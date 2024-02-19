@@ -1,0 +1,2 @@
+Method findAll was called
+Method findPerformerById was called
