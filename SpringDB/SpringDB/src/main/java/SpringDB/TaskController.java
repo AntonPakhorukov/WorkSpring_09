@@ -1,5 +1,6 @@
 package SpringDB;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,6 +24,7 @@ import java.util.List;
  * localhost:8080/api/tasks/id
  */
 @RestController
+@Tag(name = "Task API")
 public class TaskController {
     @Autowired
     private final TaskService taskService;

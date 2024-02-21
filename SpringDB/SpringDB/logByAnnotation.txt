@@ -1,3 +1,5 @@
-Method sortById was called
 Method getAllTask was called
-Method getTaskById was called
+Method getAllTask was called
+Method getAllTask was called
+Method getAllTask was called
+Method getAllTask was called
