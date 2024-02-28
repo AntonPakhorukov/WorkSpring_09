@@ -1,4 +1,4 @@
-package SpringDB;
+package SpringDB.doc;
 /**
  * Посмотреть можно на:
  * http://localhost:8080/v3/api-docs

@@ -1,4 +1,4 @@
-package SpringDB;
+package SpringDB.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -11,7 +11,7 @@ import java.io.IOException;
 @Aspect
 @Component
 public class AllMethodAspect {
-    @Before("execution(* SpringDB.PerformerService.*(..))")
+    @Before("execution(* SpringDB.service.PerformerService.*(..))")
     public void logAllMethods(JoinPoint joinPoint){
 //        System.out.println("Вариант логирования execution. Был вызван метод " + joinPoint.getSignature().toString());
         try(FileWriter fileWriter = new FileWriter("logByExecution.txt", true)){

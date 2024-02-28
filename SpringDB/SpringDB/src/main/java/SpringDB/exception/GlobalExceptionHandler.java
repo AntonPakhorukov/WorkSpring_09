@@ -1,4 +1,4 @@
-package SpringDB;
+package SpringDB.exception;
 
 import org.apache.velocity.exception.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;

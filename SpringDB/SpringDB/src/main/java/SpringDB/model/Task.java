@@ -1,4 +1,4 @@
-package SpringDB;
+package SpringDB.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package SpringDB;
+package SpringDB.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -11,7 +11,7 @@ import java.security.Security;
 @Aspect
 @Component
 public class LoggingAspect {
-    @After("@annotation(SpringDB.TrackUserAction)")
+    @After("@annotation(SpringDB.aspect.TrackUserAction)")
     public void logBeforeMethodCall(JoinPoint joinPoint) {
 //        System.out.println("Вариант логирования через annotation. Method " + joinPoint.getSignature().getName() + " was called");
         try(FileWriter fileWriter = new FileWriter("logByAnnotation.txt", true)){

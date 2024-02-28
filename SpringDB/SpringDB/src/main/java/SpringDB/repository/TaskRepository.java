@@ -1,5 +1,6 @@
-package SpringDB;
+package SpringDB.repository;
 
+import SpringDB.model.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
