@@ -18,6 +18,7 @@ public class Task implements Serializable {
     private Long id;
     @Column(nullable = false)
     private String description;
+    @Enumerated(EnumType.ORDINAL)
     private Status status;
     @OneToMany
     @JoinColumn(name = "performer_id")

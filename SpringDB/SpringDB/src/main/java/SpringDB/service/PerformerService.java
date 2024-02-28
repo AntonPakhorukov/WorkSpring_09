@@ -37,8 +37,7 @@ public class PerformerService {
     }
 
     public void deletePerformer(Long id) {
-        findPerformerById(id);
-        performerRepository.findAll().remove(id);
+        performerRepository.deleteById(id);
     }
 
     public void clearListPerformer() {
